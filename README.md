@@ -2,4 +2,6 @@
 When in doubt, go to the library. — Ron Weasley
 
 
-Im progress..
+flask db stamp head
+$ flask db migrate
+$ flask db upgrade
