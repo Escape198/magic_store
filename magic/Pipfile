@@ -6,10 +6,13 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-flask-restful = "*"
+flask = "*"
 flask-sqlalchemy = "*"
 flask-migrate = "*"
 flask-swagger-ui = "*"
+flask-restful = "*"
+marshmallow-sqlalchemy = "*"
+flask-debugtoolbar = "*"
 
 [requires]
 python_version = "3.7"
