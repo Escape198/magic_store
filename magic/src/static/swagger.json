@@ -1,11 +1,11 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "description": "Vlad Romaniuk",
+    "description": "Ruslan Kirzhanov",
     "version": "1.0.0",
-    "title": "Flask Swagger UI Tutorial",
+    "title": "Magic store",
     "contact": {
-      "email": "romanuk_vlad@ukr.net"
+      "email": "r.kirzhanov@albato.ru"
     },
     "license": {
       "name": "MIT",
@@ -19,38 +19,38 @@
   ],
   "tags": [
     {
-      "name": "Film Request",
-      "description": "Example API for requesting and return films requests"
+      "name": "Book Request",
+      "description": "Example API for requesting and return books requests"
     }
   ],
   "paths": {
-    "/films": {
+    "/books": {
       "get": {
         "tags": [
-          "Film Request"
+          "Book Request"
         ],
-        "summary": "Returns all available films in the system",
+        "summary": "Returns all available books in the system",
         "responses": {
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/components/schemas/filmsResponse"
+              "$ref": "#/components/schemas/booksResponse"
             }
           }
         }
       },
       "post": {
         "tags": [
-          "Film Request"
+          "Book Request"
         ],
-        "summary": "Create a new film",
+        "summary": "Create a new book",
         "requestBody": {
-          "description": "Film Request Post Object",
+          "description": "Book Request Post Object",
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/films"
+                "$ref": "#/components/schemas/books"
               }
             }
           }
@@ -71,18 +71,18 @@
         }
       }
     },
-    "/films/{uuid}": {
+    "/books/{uuid}": {
       "get": {
         "tags": [
-          "Film Request"
+          "Book Request"
         ],
-        "summary": "Get film with given UUID",
+        "summary": "Get book with given UUID",
         "parameters": [
           {
             "in": "path",
             "name": "uuid",
             "required": true,
-            "description": "Film Request uuid",
+            "description": "Book Request uuid",
             "schema": {
               "$ref": "#/components/schemas/uuid"
             }
@@ -92,40 +92,40 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/components/schemas/film"
+              "$ref": "#/components/schemas/book"
             }
           },
           "400": {
             "description": "Failed. Wrong data."
           },
           "404": {
-            "description": "Failed. Film was not found."
+            "description": "Failed. Book was not found."
           }
         }
       },
       "put": {
-        "summary": "edit a film request by uuid",
+        "summary": "edit a book request by uuid",
         "tags": [
-          "Film Request"
+          "Book Request"
         ],
         "parameters": [
           {
             "in": "path",
             "name": "uuid",
             "required": true,
-            "description": "Film Request uuid",
+            "description": "Book Request uuid",
             "schema": {
               "$ref": "#/components/schemas/uuid"
             }
           }
         ],
         "requestBody": {
-          "description": "Film Request Object",
+          "description": "Book Request Object",
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/film"
+                "$ref": "#/components/schemas/book"
               }
             }
           }
@@ -137,7 +137,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/components/schemas/film"
+              "$ref": "#/components/schemas/book"
             }
           },
           "400": {
@@ -146,16 +146,16 @@
         }
       },
       "delete": {
-        "summary": "Delete Film Request by UUID",
+        "summary": "Delete Book Request by UUID",
         "tags": [
-          "Film Request"
+          "Book Request"
         ],
         "parameters": [
           {
             "in": "path",
             "name": "uuid",
             "required": true,
-            "description": "Film Request uuid",
+            "description": "Book Request uuid",
             "schema": {
               "$ref": "#/components/schemas/uuid"
             }
@@ -172,7 +172,7 @@
             "description": "Failed. Misunderstood Request."
           },
           "404": {
-            "description": "Failed. Film was not found."
+            "description": "Failed. Book was not found."
           }
         }
       }
@@ -187,7 +187,7 @@
           }
         }
       },
-      "films": {
+      "books": {
         "type": "object",
         "properties": {
           "title": {
@@ -214,7 +214,7 @@
           }
         }
       },
-      "film": {
+      "book": {
         "type": "object",
         "properties": {
           "title": {
@@ -241,13 +241,13 @@
           }
         }
       },
-      "filmsResponse": {
+      "booksResponse": {
         "type": "object",
         "properties": {
           "bookRequest": {
             "type": "object",
             "additionalProperties": {
-              "$ref": "#/components/schemas/film"
+              "$ref": "#/components/schemas/book"
             }
           }
         }
